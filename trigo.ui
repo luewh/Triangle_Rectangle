@@ -341,7 +341,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/TrigoTriangle.png</pixmap>
+          <pixmap>TrigoTriangle.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>

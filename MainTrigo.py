@@ -308,7 +308,7 @@ class Main():
         self.widget.setWindowTitle("Triangle view")
 
         self.textLabel = QLabel(self.widget)
-        self.textLabel.setPixmap(QPixmap("../images/TrigoTriangle.png"))
+        self.textLabel.setPixmap(QPixmap("TrigoTriangle.png"))
         self.textLabel.setScaledContents(True)
 
         a=500

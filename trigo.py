@@ -119,7 +119,7 @@ class Ui_MainWindow(object):
         self.label.setMinimumSize(QtCore.QSize(159, 134))
         self.label.setBaseSize(QtCore.QSize(50, 38))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("../images/TrigoTriangle.png"))
+        self.label.setPixmap(QtGui.QPixmap("TrigoTriangle.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.gridLayout_3.addWidget(self.label, 1, 0, 2, 3)
