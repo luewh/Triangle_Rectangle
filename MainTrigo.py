@@ -14,7 +14,7 @@ class Main():
         self.ui.clear.clicked.connect(self.clearLineEdit)
         self.ui.striangle.clicked.connect(self.showTriangle)
         self.ui.Clear_list.clicked.connect(self.clearListWidget)
-        self.ui.calculer.clicked.connect(self.negatifCheck)
+        self.ui.calculer.clicked.connect(self.NegativeOrTextCheck)
 
 
     def clearLineEdit(self):
@@ -54,8 +54,8 @@ class Main():
     def clearListWidget(self):
         self.ui.listWidget.clear()
 
-    # warne negative value entered before calcule decision    
-    def negatifCheck(self):
+    # warne negative value or text entered before calcule decision    
+    def NegativeOrTextCheck(self):
 
         # set void LineEdit to 0
         if self.ui.AB.text() == "":
@@ -74,13 +74,23 @@ class Main():
             self.ui.beta_rad.setText("0")
 
         #import all LineEdit
-        AB=float(self.ui.AB.text())
-        AC=float(self.ui.AC.text())
-        BC=float(self.ui.BC.text())
-        alpha=float(self.ui.alpha.text())
-        beta=float(self.ui.beta.text())
-        alpharad=float(self.ui.alpha_rad.text())
-        betarad=float(self.ui.beta_rad.text())
+        try:
+            AB=float(self.ui.AB.text())
+            AC=float(self.ui.AC.text())
+            BC=float(self.ui.BC.text())
+            alpha=float(self.ui.alpha.text())
+            beta=float(self.ui.beta.text())
+            alpharad=float(self.ui.alpha_rad.text())
+            betarad=float(self.ui.beta_rad.text())
+        except:
+            msg1 = QMessageBox()
+            msg1.setWindowTitle("WARNING")
+            msg1.setText("WARNING : a text is entered")
+            msg1.setIcon(QMessageBox.Warning)
+            msg1.setStandardButtons(QMessageBox.Ok)
+            x = msg1.exec_()
+            self.clear0()
+            return
 
         # popup window "show detail text" container
         detailText=""
